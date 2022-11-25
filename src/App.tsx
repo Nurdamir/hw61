@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import AboutCountries from "./components/AboutCountries/AboutCountries";
+import AboutCountries from "./container/AboutCountries/AboutCountries";
 
 function App() {
   return (

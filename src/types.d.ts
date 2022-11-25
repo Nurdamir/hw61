@@ -7,7 +7,7 @@ export interface ApiCountries {
 export interface ApiInfoCountry {
   name: string;
   capital: string;
-  population: number;
+  population?: number;
   flag: string;
-  borders: string[];
+  borders?: string[];
 }

@@ -1,8 +1,7 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import axios from 'axios';
 import {ApiCountries} from "../../types";
-import Country from "../Country/Country";
-import InfoCountry from "../InfoCountry/InfoCountry";
+import InfoCountry from "../../components/InfoCountry/InfoCountry";
 
 interface Country {
   name: string;
@@ -14,35 +13,38 @@ const AboutCountries = () => {
   const [selectedCountryCode, setSelectedCountryCode] = useState<string | null>(null)
 
   const fetchData = useCallback(async () => {
-    const countriesResponse = await axios.get<ApiCountries[]>('/v2/all?fields=alpha3Code,name')
+    const countriesResponse = await axios.get<ApiCountries[]>('/v2/all?fields=alpha3Code,name');
 
     const newCountry = countriesResponse.data.map(country => {
       return {
         name: country.name,
         code: country.alpha3Code
       }
-
     })
     setCountries(newCountry)
   }, []);
 
   useEffect(() => {
     fetchData().catch(console.error)
-  }, [fetchData])
-
+  }, [fetchData]);
 
   return (
-    <div>
+    <div style={{display: 'flex'}}>
+      <div style={{marginRight: '150px'}}>
+        <ol>
+          {countries.map(country => (
+            <li
+              key={Math.random()}
+              onClick={() => setSelectedCountryCode(country.code)}
+            >
+              {country.name}
+            </li>
+          ))}
+        </ol>
+      </div>
       <div>
         <InfoCountry id={selectedCountryCode}/>
       </div>
-
-
-      {countries.map(country => (
-        <Country key={Math.random()} name={country.name} onClick={() => setSelectedCountryCode(country.code)}/>
-      ))}
-
-
     </div>
   );
 };
