@@ -1,6 +1,10 @@
 .App {
     padding: 5%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    border-radius: 20px;
+    color: white;
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*justify-content: space-between;*/
+
+    background: cadetblue;
 }

@@ -47,8 +47,8 @@ const InfoCountry: React.FC<Props> = ({id}) => {
       <div className='infoCountry'>
         <div>
           <h4>{infoCountry.name}</h4>
-          <p>Столица:<strong style={{margin: '5px'}}>{infoCountry.capital}</strong></p>
-          <p>Население: <strong style={{margin: '5px'}}>{infoCountry.population}</strong> чел.</p>
+          <p>Столица:<strong>{infoCountry.capital}</strong></p>
+          <p>Население: <strong>{infoCountry.population}</strong> чел.</p>
         </div>
         <img className="flag" src={infoCountry.flag} alt="flag"/>
       </div>
@@ -64,15 +64,14 @@ const InfoCountry: React.FC<Props> = ({id}) => {
           </ul>
         </div>
       ) : (
-        <p>
+        <p className="noBorder">
           Эта страна не граничит ни с какой страной!
         </p>
       )}
-
     </div>
   ) : (
-    <div>
-      Выбери страну!
+    <div className="selectCountry">
+      Выберите страну!
     </div>
   );
 };

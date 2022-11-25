@@ -2,3 +2,36 @@
     width: 400px;
     height: auto;
 }
+
+.infoCountry strong {
+    margin: 5px;
+}
+
+.infoCountry p {
+    font-size: 28px;
+    margin-bottom: 15px;
+    margin-top: 3px;
+}
+
+.noBorder {
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+h4 {
+    font-weight: bold;
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+h5 {
+    font-weight: bold;
+    font-size: 30px;
+    margin: 10px;
+}
+
+.selectCountry {
+    font-size: 25px;
+    font-weight: bold;
+    padding-top: 200px;
+}

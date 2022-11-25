@@ -2,6 +2,7 @@ import React, {useCallback, useEffect, useState} from 'react';
 import axios from 'axios';
 import {ApiCountries} from "../../types";
 import InfoCountry from "../../components/InfoCountry/InfoCountry";
+import './AboutCountries.css';
 
 interface Country {
   name: string;
@@ -29,8 +30,8 @@ const AboutCountries = () => {
   }, [fetchData]);
 
   return (
-    <div style={{display: 'flex'}}>
-      <div style={{marginRight: '150px'}}>
+    <div className="allInfo">
+      <div>
         <ol>
           {countries.map(country => (
             <li

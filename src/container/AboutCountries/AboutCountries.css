@@ -1,0 +1,14 @@
+.allInfo {
+    display: flex;
+    justify-content: space-around;
+}
+
+ol li {
+    font-size: 25px;
+    padding-left: 10px;
+}
+
+ol li:hover {
+    background: darkgrey;
+    border-radius: 10px;
+}
